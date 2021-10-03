@@ -1,0 +1,31 @@
+@font-face {
+    src: url("./assests/fonts/Comfortaa/Comfortaa-VariableFont_wght.ttf");
+    font-family: comforta;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /*transition-duration: .3s;*/
+}
+
+textarea{
+    font-family: comforta,sans-serif;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    border-bottom: 2px solid #007BEA;
+    font-family: comforta,sans-serif;
+}
+
+img{
+    width: 100%;
+}
+
+body{
+    background-color: #007BEA;
+    font-family: comforta,sans-serif;
+}

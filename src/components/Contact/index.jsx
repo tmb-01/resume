@@ -1,6 +1,6 @@
 import {
     ButtonSubmit, ContactBox, ContactIcon, ContactInfo, ContactText,
-    ContentContainer, DFlex,
+    DFlex,
     FormField,
     FullName, InputField,
     TextareaField
@@ -8,12 +8,55 @@ import {
 import {ReactComponent as Phone} from "../../assests/icons/phone-contact.svg";
 import {ReactComponent as Location} from "../../assests/icons/location-contact.svg";
 import {ReactComponent as Email} from "../../assests/icons/email-contact.svg";
+import {ContentContainer, ContentTitle} from "../mainContent/styles";
+import axios from "axios";
+import {useState} from "react";
 
 function Contact() {
+
+    const [progress, setProgress] = useState({loading: false, success: false, error: false});
+
+    const submitMessage = (e) => {
+        setProgress({loading: true, success: false, error: false})
+        e.preventDefault()
+        const {fullName, email, message} = e.target
+
+        const form = {
+            fullName: fullName.value,
+            email: email.value,
+            message: message.value
+        }
+
+        const messageText =
+            `<b>full name:</b> ${form.fullName}\n` +
+            `<b>email:</b> ${form.email}\n` +
+            `<b>message:</b> ${form.message}`
+        ;
+
+        const token = "2067332716:AAGGnQWJGozm78UOO2ysaFCCwHMR327FaY4";
+
+        const api = `https://api.telegram.org/bot${token}/sendMessage`
+
+        axios.post(api, {chat_id: "286602133", text: messageText, parse_mode: "html"})
+            .then(() => {
+                setProgress({loading: false, success: true, error: false})
+                console.log("success")
+            })
+            .catch(() => {
+                console.log("error")
+                setProgress({loading: false, success: false, error: true})
+            })
+            .finally(() => {
+                setTimeout(() => {
+                    setProgress({loading: false, success: false, error: false})
+                }, 5000)
+            })
+    }
+
     return (
         <ContentContainer>
 
-            <FullName>Contact</FullName>
+            <ContentTitle>Contact</ContentTitle>
             <DFlex>
 
                 <ContactInfo>
@@ -43,11 +86,13 @@ function Contact() {
                     </ContactBox>
                 </ContactInfo>
 
-                <FormField>
-                    <InputField placeholder={"Full Name"} type={"text"}/>
-                    <InputField placeholder={"Email"} type={"email"}/>
-                    <TextareaField placeholder={"Message"} rows={5}/>
-                    <ButtonSubmit>Send Message</ButtonSubmit>
+                <FormField onSubmit={submitMessage}>
+                    <InputField name={"fullName"} placeholder={"Full Name"} type={"text"} required/>
+                    <InputField name={"email"} placeholder={"Email"} type={"email"} required/>
+                    <TextareaField name={"message"} placeholder={"Message"} rows={5} required/>
+                    <ButtonSubmit disabled={progress.loading || progress.success || progress.error}>
+                        {progress.loading ? "Loading..." : progress.success ? "Success" : progress.error ? "Error" : "Send Message"}
+                    </ButtonSubmit>
                 </FormField>
             </DFlex>
 

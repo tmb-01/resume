@@ -1,26 +1,27 @@
 import styled from "styled-components";
 
-export const ContentContainer = styled.div`
-  width: calc(1000px);
-  margin: auto;
-  background-color: #222;
-  padding: 40px 40px;
-  border-radius: 40px;
-  min-height: 500px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-`;
+// export const ContentContainer = styled.div`
+//   width: calc(1000px);
+//   margin: auto;
+//   background-color: #222;
+//   padding: 40px 40px;
+//   border-radius: 40px;
+//   min-height: 500px;
+//   display: flex;
+//   align-items: center;
+//   flex-direction: column;
+//   justify-content: center;
+// `;
 
-export const ContentTitle = styled.div`
-  font-size: 50px;
-  font-weight: bold;
-  text-align: center;
-`;
+// export const ContentTitle = styled.div`
+//   font-size: 50px;
+//   font-weight: bold;
+//   text-align: center;
+// `;
 
 export const DFlex = styled.div`
   display: flex;
+  flex-wrap: wrap;
   width: 100%;
   margin-top: 30px;
 `;
@@ -28,12 +29,33 @@ export const DFlex = styled.div`
 export const Half = styled.div`
   width: 50%;
   padding: 0 25px;
+  @media only screen and (max-width: 1320px){
+    &:first-child {
+      padding: 0 15px 0 0;
+    }
+    &:last-child {
+      padding: 0 0 0 15px;
+    }
+  }
+  @media only screen and (max-width: 950px){
+    width: 100%;
+    &:first-child{
+      padding: 0 !important;
+    }
+    
+    &:last-child{
+      padding: 30px 0 0 !important;
+    }
+  }
 `;
 
 export const BoxWrapper = styled.div`
   width: 100%;
   border-left: 3px solid gray;
   padding: 1px 0 1px 20px;
+  @media only screen and (max-width: 510px){
+    padding: 1px 0 1px 10px;
+  }
 `;
 
 export const BoxInner = styled.div`
@@ -73,12 +95,24 @@ export const BoxInner = styled.div`
     left: -30px;
     background-color: #007BEA;
   }
-
+  @media only screen and (max-width: 510px){
+    &:before{
+      left: -20px;
+    }
+    
+    &:after{
+      left: -20px;
+      width: 20px;
+    }
+  }
 `;
 
 export const BoxTitle = styled.div`
   font-size: 20px;
   font-weight: bold;
+  @media only screen and (max-width: 510px){
+    font-size: 18px;
+  }
 `;
 
 export const Year = styled.div`
@@ -133,6 +167,12 @@ export const ShortInfoValue = styled.div`
 export const ColumnTitle = styled.div`
   font-size: 30px;
   font-weight: bold;
+  @media only screen and (max-width: 610px){
+    font-size: 25px;
+  }
+  @media only screen and (max-width: 510px){
+    font-size: 20px;
+  }
 `;
 
 

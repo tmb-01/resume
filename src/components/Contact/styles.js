@@ -8,18 +8,18 @@ export const MainContentWrapper = styled.div`
   align-items: center;
 `;
 
-export const ContentContainer = styled.div`
-  width: calc(1000px);
-  margin: auto;
-  background-color: #222;
-  padding: 40px 70px;
-  border-radius: 40px;
-  min-height: 500px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-`;
+// export const ContentContainer = styled.div`
+//   width: calc(1000px);
+//   margin: auto;
+//   background-color: #222;
+//   padding: 40px 70px;
+//   border-radius: 40px;
+//   min-height: 500px;
+//   display: flex;
+//   align-items: center;
+//   flex-direction: column;
+//   justify-content: center;
+// `;
 
 export const FullName = styled.div`
   font-size: 50px;
@@ -71,6 +71,9 @@ export const DFlex = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
+  @media only screen and (max-width: 950px){
+    flex-direction: column;
+  }
 `;
 
 export const ShortInfoWrapper = styled.div`
@@ -103,6 +106,9 @@ export const FormField = styled.form`
   //display: flex;
   //justify-content: space-between;
   margin-top: 20px;
+  @media only screen and (max-width: 950px){
+    width: 100%;
+  }
 `;
 
 export const InputField = styled.input`
@@ -164,6 +170,9 @@ export const ButtonSubmit = styled.button`
 export const ContactInfo = styled.form`
   width: 48%;
   margin-top: 20px;
+  @media only screen and (max-width: 950px){
+    width: 100%;
+  }
 `;
 
 export const ContactBox = styled.div`
@@ -179,6 +188,10 @@ export const ContactIcon = styled.div`
   svg{
     fill: #007BEA;
   }
+  @media only screen and (max-width: 510px){
+    width: 32px;
+    height: 32px;
+  }
 `;
 
 export const ContactText = styled.div`
@@ -186,4 +199,8 @@ export const ContactText = styled.div`
   padding-left: 10px;
   font-weight: bold;
   font-size: 18px;
+  @media only screen and (max-width: 510px){
+    font-size: 15px;
+    padding-left: 5px;
+  }
 `;

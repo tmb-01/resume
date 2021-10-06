@@ -7,6 +7,15 @@ export const MainContentWrapper = styled.div`
   display: flex;
   align-items: center;
   overflow: auto;
+  @media only screen and (max-width: 1320px){
+    width: calc(100% - 100px);
+  }
+  @media only screen and (max-width: 720px) {
+    width: 100%;
+  }
+  @media only screen and (max-width: 610px){
+   padding: 10px 10px 40px;
+  }
 `;
 
 export const ContentContainer = styled.div`
@@ -20,12 +29,33 @@ export const ContentContainer = styled.div`
   align-items: center;
   flex-direction: column;
   justify-content: center;
+  @media only screen and (max-width: 1320px){
+    width: 800px;
+    padding: 40px 40px;
+  }
+  
+  @media only screen and (max-width: 950px){
+    width: 600px;
+  }
+  @media only screen and (max-width: 610px){
+    width:100%;
+    padding: 20px;
+    border-radius: 20px;
+  }
 `;
 
-export const FullName = styled.div`
+export const ContentTitle = styled.div`
   font-size: 50px;
   font-weight: bold;
   text-align: center;
+
+  @media only screen and (max-width: 610px) {
+    width: 80%;
+    font-size: 40px;
+  }
+  @media only screen and (max-width: 510px){
+    font-size: 30px;
+  }
 `;
 
 export const JobName = styled.div`

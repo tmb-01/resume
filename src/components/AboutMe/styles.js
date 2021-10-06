@@ -8,18 +8,18 @@ export const MainContentWrapper = styled.div`
   align-items: center;
 `;
 
-export const ContentContainer = styled.div`
-  width: calc(1000px);
-  margin: auto;
-  background-color: #222;
-  padding: 40px 70px;
-  border-radius: 40px;
-  min-height: 500px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-`;
+// export const ContentContainer = styled.div`
+//   width: calc(1000px);
+//   margin: auto;
+//   background-color: #222;
+//   padding: 40px 70px;
+//   border-radius: 40px;
+//   min-height: 500px;
+//   display: flex;
+//   align-items: center;
+//   flex-direction: column;
+//   justify-content: center;
+// `;
 
 export const FullName = styled.div`
   font-size: 50px;
@@ -54,6 +54,12 @@ export const JobName = styled.div`
       background-color: #007BEA;
     }
   }
+  @media only screen and (max-width: 510px){
+    font-size: 16px;
+    div{
+      font-size: 18px;
+    }
+  }
 `;
 
 export const Description = styled.div`
@@ -65,15 +71,28 @@ export const Description = styled.div`
   a {
     color: white;
   }
+  @media only screen and (max-width: 950px){
+    width: 100%;
+  }
+  @media only screen and (max-width: 510px){
+    font-size: 16px;
+  }
 `;
 
 export const DFlex = styled.div`
   display: flex;
   justify-content: space-between;
+  
+  @media only screen and (max-width: 950px){
+    flex-direction: column;
+  }
 `;
 
 export const ShortInfoWrapper = styled.div`
   width: 40%;
+  @media only screen and (max-width: 950px){
+    width: 100%;
+  }
 `;
 
 export const ShortInfoBox = styled.div`

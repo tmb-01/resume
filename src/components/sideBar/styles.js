@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import {Link} from "react-router-dom";
 
-
 export const SideBarWrapper = styled.div`
   width: 300px;
   height: 100%;
@@ -10,6 +9,31 @@ export const SideBarWrapper = styled.div`
   //padding: 30px;
   display: flex;
   flex-direction: column;
+  position: relative;
+  overflow-y: auto;
+  overflow-x: visible;
+  @media only screen and (max-width: 1320px) {
+    width: 100px;
+  }
+
+  @media only screen and (max-width: 720px) {
+    width: 100%;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    flex-direction: row;
+    height: fit-content;
+    z-index: 9999999;
+    border-radius: 0;
+  }
+  @media only screen and (max-width: 510px){
+    //height: 50px;
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 export const AvatarImage = styled.div`
@@ -20,6 +44,10 @@ export const AvatarImage = styled.div`
   border-radius: 50%;
   margin: 30px auto 0;
   box-shadow: 0 0 50px black;
+
+  @media only screen and (max-width: 1320px) {
+    display: none;
+  }
 
   div {
     box-shadow: 0 0 20px black;
@@ -38,6 +66,18 @@ export const NavbarWrapper = styled.div`
   margin: 0 0;
   width: 100%;
   padding-right: 30px;
+  @media only screen and (max-width: 1320px) {
+    padding-right: 10px;
+    margin: auto;
+  }
+  @media only screen and (max-width: 720px) {
+    display: flex;
+    //justify-content: space-between;
+    padding: 0;
+    width: calc(100% - 80px);
+    margin: 0;
+    border-right: 1px solid grey;
+  }
 `;
 
 export const NavBox = styled(Link)`
@@ -71,7 +111,7 @@ export const NavBox = styled(Link)`
     }
 
     .fill {
-      stroke: none;
+      stroke: none !important;
       fill: ${({active}) => active ? "#007BEA" : ""} !important;
     }
   }
@@ -95,6 +135,19 @@ export const NavBox = styled(Link)`
     }
   }
 
+  @media only screen and (max-width: 1320px) {
+    height: 70px;
+  }
+  @media only screen and (max-width: 720px) {
+    width: 25%;
+    
+    &:before{
+      border-radius: 0;
+    }
+  }
+  @media only screen and (max-width: 510px){
+    height: 50px;
+  }
 `;
 
 export const NavIcon = styled.div`
@@ -103,6 +156,7 @@ export const NavIcon = styled.div`
   margin-left: 50px;
 
   svg {
+    //width: 100%;
     path {
       stroke: #969696;
     }
@@ -112,11 +166,40 @@ export const NavIcon = styled.div`
       fill: #969696;
     }
   }
+
+  @media only screen and (max-width: 1320px) {
+    width: fit-content;
+    //margin-left: 20px;
+    margin: auto;
+    svg {
+      width: 40px;
+      height: 40px;
+    }
+  }
+  @media only screen and (max-width: 720px) {
+    margin: auto;
+  }
+  @media only screen and (max-width: 510px){
+    svg {
+      width: 30px;
+      height: 30px;
+    }
+  }
 `;
 
 export const NavText = styled.div`
   text-transform: capitalize;
+  @media only screen and (max-width: 1320px) {
+    display: none;
+  }
 
+`;
+
+export const AllSocialMediaWrapper = styled.div`
+  padding: 0 30px;
+  @media only screen and (max-width: 720px) {
+    padding: 0;
+  }
 `;
 
 
@@ -128,6 +211,27 @@ export const SocialMediaWrapper = styled.div`
   width: 100%;
   margin: 30px 0;
   justify-content: space-evenly;
+
+  @media only screen and (max-width: 1320px) {
+    width: fit-content;
+    display: ${({isOpenSM}) => isOpenSM ? "flex" : "none"};
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    margin: 0;
+    z-index: 9999;
+    padding: 20px;
+    background-color: #222;
+    //box-shadow: none;
+    border-radius: 0 40px 0 0;
+  }
+
+  @media only screen and (max-width: 720px) {
+    right: 0;
+    left: auto;
+    flex-direction: column;
+    border-radius: 40px  0 0 0;
+  }
 `;
 
 export const SocialMediaIcon = styled.a`
@@ -172,15 +276,15 @@ export const SocialMediaIcon = styled.a`
 
     .instagram {
       .first {
-        fill: url(#a);
+        fill: url(#a) !important;
       }
 
       .second {
-        fill: url(#b);
+        fill: url(#b) !important;
       }
 
       .third {
-        fill: url(#c);
+        fill: url(#c) !important;
       }
     }
 
@@ -201,5 +305,81 @@ export const SocialMediaIcon = styled.a`
         fill: #0077b5 !important;
       }
     }
+  }
+
+  @media only screen and (max-width: 1320px) {
+    svg {
+      width: auto;
+      height: 100%;
+
+      path {
+        fill: #969696;
+        transition-duration: .5s;
+      }
+
+      #transparent {
+        fill: #222;
+      }
+
+
+      circle {
+        fill: #969696;
+        transition-duration: .5s;
+      }
+    }
+
+  }
+
+  @media only screen and (max-width: 720px) {
+    height: 45px;
+    padding: 10px;
+  }
+
+`;
+
+
+export const SocialMediaToggle = styled.a`
+  width: 40px;
+  height: 40px;
+  margin: 0 auto 20px;
+  position: relative;
+  //right: 0;
+  //left: 0;
+  //bottom: 30px;
+  border: 0;
+  display: none;
+
+  svg {
+    width: 100%;
+    height: 100%;
+    fill: #969696;
+  }
+
+  &:hover, &:focus {
+    svg {
+      fill: #007BEA;
+    }
+  }
+
+  .social-media {
+    display: none;
+  }
+
+  @media only screen and (max-width: 1320px) {
+    display: block;
+    .social-media {
+      padding: 20px;
+      display: ${({isOpenSM}) => isOpenSM ? "flex" : "none"};
+      box-shadow: 0 0 10px #444;
+    }
+  }
+  @media only screen and (max-width: 720px) {
+    height: 100%;
+    margin: auto;
+    padding: 0;
+  }
+  @media only screen and (max-width: 510px){
+    width: 30px;
+    height: 30px;
   }
 `;

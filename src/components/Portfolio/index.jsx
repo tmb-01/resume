@@ -1,6 +1,5 @@
 import {
     CategoryText,
-    ContentContainer,
     ExternalLinkBox,
     PATextBox,
     PortfolioCard,
@@ -9,7 +8,7 @@ import {
     Video,
     VideoBox,
 } from "./styles";
-import {FullName} from "../mainContent/styles";
+import {ContentContainer, ContentTitle, FullName} from "../mainContent/styles";
 import ibsSchoolWebsite from "../../assests/video/ibs school website.mp4"
 import visitCard from "../../assests/video/Visit Card for contact section of webpage.mp4"
 import spaceAcademy from "../../assests/video/space academy.mp4"
@@ -72,7 +71,7 @@ function Portfolio() {
     return (
         <ContentContainer>
 
-            <FullName>Portfolio</FullName>
+            <ContentTitle>Portfolio</ContentTitle>
 
             <PortfolioWrapper>
                 {portfolios.map(({category, title, video, link, oneOfThree}) => (

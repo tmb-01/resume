@@ -1,11 +1,12 @@
 import {
+    AllSocialMediaWrapper,
     AvatarImage,
     NavbarWrapper,
     NavBox,
     NavIcon,
     NavText,
     SideBarWrapper,
-    SocialMediaIcon,
+    SocialMediaIcon, SocialMediaToggle,
     SocialMediaWrapper
 } from "./styles";
 
@@ -22,9 +23,13 @@ import {ReactComponent as TelegramIcon} from "../../assests/icons/telegram.svg"
 import {ReactComponent as InstagramIcon} from "../../assests/icons/instagram.svg"
 import {ReactComponent as LinkedInIcon} from "../../assests/icons/linkedin.svg"
 import {ReactComponent as GitHubIcon} from "../../assests/icons/github.svg"
+import {ReactComponent as WebGlobe} from "../../assests/icons/web-globe.svg"
 import {useLocation} from "react-router-dom";
+import {useState} from "react";
 
 function SideBar() {
+
+    const [isOpenSM, setIsOpenSM] = useState(false)
 
     const navs = [
         {
@@ -83,8 +88,8 @@ function SideBar() {
                 </div>
             </AvatarImage>
 
-            <div style={{padding: "0 30px"}}>
-                <SocialMediaWrapper>
+            <AllSocialMediaWrapper>
+                <SocialMediaWrapper isOpenSM={isOpenSM}>
                     {
                         socialMedia.map(({name, Icon, link}, index) => (
                             <SocialMediaIcon title={name} key={index} href={link} target="_blank">
@@ -94,7 +99,7 @@ function SideBar() {
                     }
 
                 </SocialMediaWrapper>
-            </div>
+            </AllSocialMediaWrapper>
             <NavbarWrapper>
                 {navs.map(({Icon, text, link}, index) => (
                     <NavBox active={location.pathname === link} key={index} to={link}>
@@ -104,6 +109,12 @@ function SideBar() {
                 ))}
 
             </NavbarWrapper>
+
+            <SocialMediaToggle isOpenSM={isOpenSM} href={""} onClick={e => e.preventDefault()}
+                               onFocus={() => setIsOpenSM(true)}
+                               onBlur={() =>setTimeout(()=>setIsOpenSM(false),100)}>
+                <WebGlobe/>
+            </SocialMediaToggle>
 
         </SideBarWrapper>
     )

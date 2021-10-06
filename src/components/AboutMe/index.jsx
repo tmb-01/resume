@@ -1,5 +1,4 @@
 import {
-    ContentContainer,
     Description,
     DFlex,
     FullName,
@@ -9,12 +8,13 @@ import {
 } from "./styles";
 import Typing from "react-typing-animation";
 import {Backspace} from "react-typing-animation";
+import {ContentContainer, ContentTitle} from "../mainContent/styles";
 
 function AboutMe() {
     return (
         <ContentContainer>
 
-            <FullName>Maraim Tukhtasunov</FullName>
+            <ContentTitle>Maraim Tukhtasunov</ContentTitle>
             <JobName>I am a
                 <Typing startDelay={1500} loop={true} speed={10} hideCursor={true}>
                     <span>FrontEnd</span>

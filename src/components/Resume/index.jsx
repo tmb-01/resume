@@ -1,7 +1,5 @@
 import {
     ColumnTitle,
-    ContentContainer,
-    ContentTitle,
     DFlex,
     Half,
     ShortInfoBox,
@@ -10,6 +8,7 @@ import {
     ShortInfoWrapper
 } from "./styles";
 import Box from "./box";
+import {ContentContainer, ContentTitle} from "../mainContent/styles";
 
 function Resume() {
 

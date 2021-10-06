@@ -8,18 +8,18 @@ export const MainContentWrapper = styled.div`
   align-items: center;
 `;
 
-export const ContentContainer = styled.div`
-  width: calc(1000px);
-  margin: auto;
-  background-color: #222;
-  padding: 40px 70px;
-  border-radius: 40px;
-  min-height: 500px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-`;
+// export const ContentContainer = styled.div`
+//   width: calc(1000px);
+//   margin: auto;
+//   background-color: #222;
+//   padding: 40px 70px;
+//   border-radius: 40px;
+//   min-height: 500px;
+//   display: flex;
+//   align-items: center;
+//   flex-direction: column;
+//   justify-content: center;
+// `;
 
 export const PortfolioWrapper = styled.div`
   display: flex;
@@ -29,6 +29,9 @@ export const PortfolioWrapper = styled.div`
 export const PortfolioCardBox = styled.div`
   width: ${({oneOfThree}) => oneOfThree ? 33.3333 : 50}%;
   padding: 10px;
+  @media only screen and (max-width: 950px){
+    width: 100%;
+  }
 `;
 
 export const PortfolioCard = styled.div`
@@ -91,6 +94,9 @@ export const CategoryText = styled.div`
   border-radius: 5px;
   margin-bottom: 5px;
   width: fit-content;
+  @media only screen and (max-width: 510px){
+    font-size: 14px;
+  }
 `;
 
 export const PATextBox = styled.div`

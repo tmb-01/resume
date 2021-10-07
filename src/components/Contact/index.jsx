@@ -65,7 +65,7 @@ function Contact() {
                             <Phone/>
                         </ContactIcon>
                         <ContactText>
-                            <a href="tel:+998990997844">+998 (99) 099-76-44</a>
+                            <a href="tel:+998990997644">+998 (99) 099-76-44</a>
                         </ContactText>
                     </ContactBox>
                     <ContactBox>

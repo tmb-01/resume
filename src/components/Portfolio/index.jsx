@@ -80,7 +80,7 @@ function Portfolio() {
                             <VideoBox>
                                 <PATextBox>
                                     <CategoryText>{category}</CategoryText>
-                                    <CategoryText>{title}</CategoryText>
+                                    <CategoryText company>{title}</CategoryText>
                                 </PATextBox>
                                 {link !== "" ?
                                     <ExternalLinkBox href={link} target={"_blank"}>

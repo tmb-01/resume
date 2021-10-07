@@ -29,10 +29,11 @@ function AboutMe() {
             <DFlex>
 
                 <Description>
-                    Dedicated and efficient full stack developer and teacher of smart and lucky students
+                    <a>Dedicated</a> and efficient <a>FullStack</a> developer and teacher of smart and lucky students
                     in <a href="https://ibs-school.uz">IBS School</a>.<br/> <br/>
-                    Experienced in application layers, presentation layers, and databases. Certified in both
-                    FrontEnd and Backend technologies. Developer of Admin Panel, CRM, Corporate website, Telegram
+                    <a>Experienced</a> in application layers, presentation layers, and databases. Certified in
+                    both <a>FrontEnd</a> and <a>BackEnd</a> technologies. Developer of Admin Panel, CRM, Corporate
+                    website, Telegram
                     bot and so on
                 </Description>
 

@@ -143,7 +143,7 @@ export const ShortInfoWrapper = styled.div`
 
 export const ShortInfoBox = styled.div`
   width: 100%;
-  display: flex;
+  //display: flex;
   flex-wrap: wrap;
   margin: 10px 0;
 
@@ -156,12 +156,14 @@ export const ShortInfoKey = styled.div`
   //border-bottom: 2px solid #007BEA;
   font-weight: bold;
   line-height: 22px;
+  display: inline;
 `;
 
 export const ShortInfoValue = styled.div`
   //width: 55%;
   color: lightgrey;
   line-height: 22px;
+  display: inline;
 `;
 
 export const ColumnTitle = styled.div`

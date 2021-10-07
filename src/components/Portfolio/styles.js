@@ -29,7 +29,7 @@ export const PortfolioWrapper = styled.div`
 export const PortfolioCardBox = styled.div`
   width: ${({oneOfThree}) => oneOfThree ? 33.3333 : 50}%;
   padding: 10px;
-  @media only screen and (max-width: 950px){
+  @media only screen and (max-width: 950px) {
     width: 100%;
   }
 `;
@@ -89,12 +89,13 @@ export const Video = styled.video`
 `;
 
 export const CategoryText = styled.div`
-  background-color: #007BEA;
+  background-color: ${({company})=>company?"#007BEA":"#007BEAdd"};
   padding: 7px 10px;
   border-radius: 5px;
   margin-bottom: 5px;
   width: fit-content;
-  @media only screen and (max-width: 510px){
+  color: ${({company}) => company ? "while" : "#bbb"};
+  @media only screen and (max-width: 510px) {
     font-size: 14px;
   }
 `;
@@ -106,7 +107,7 @@ export const PATextBox = styled.div`
   z-index: 99999999;
   transition-duration: .2s;
   //width: fit-content;
-  
+
 `;
 
 
@@ -119,7 +120,8 @@ export const ExternalLinkBox = styled.a`
   z-index: 99999999;
   display: flex;
   border-radius: 5px;
-  svg{
+
+  svg {
     width: 30px;
     fill: white;
   }

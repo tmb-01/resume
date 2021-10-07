@@ -8,4 +8,7 @@ export const MainPageWrapper=styled.div`
   @media only screen and (max-width: 720px) {
     padding-bottom: 40px;
   }
+  @media only screen and (max-width: 510px){
+    padding-bottom: 20px;
+  }
 `;
